@@ -4,11 +4,12 @@ namespace ProjectCLI\Magento\Commands;
 
 use Chriha\ProjectCLI\Commands\Command;
 use Chriha\ProjectCLI\Contracts\Plugin;
+use Chriha\ProjectCLI\Helpers;
+use Chriha\ProjectCLI\Services\Docker;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
-use Chriha\ProjectCLI\Helpers;
 
-class MagentoCommand extends Command implements Plugin
+class MagentoCommand extends Command
 {
 
     /** @var string */
@@ -33,7 +34,7 @@ class MagentoCommand extends Command implements Plugin
      *
      * @return void
      */
-    public function handle() : void
+    public function handle(Docker $docker) : void
     {
         $docker->exec('web', $this->getParameters(['php', 'bin/magento']))
             ->setTty(true)
