@@ -1,5 +1,6 @@
-name: projectcli/magento
-description: Easy access to Magento specific commands
-version: v1.0.0
 commands:
-    - \ProjectCLI\Magento\Commands\MagentoCommand
+  - \ProjectCLI\Magento\Commands\MagentoCommand
+description: 'Easy access to Magento specific commands'
+name: projectcli/magento
+type: null
+version: v1.0.1
